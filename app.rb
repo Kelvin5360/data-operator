@@ -11,8 +11,10 @@ module Data
         class App < Sinatra::Base
             register Sinatra::Contrib
 
-            get '/api/stocks' do
-                json(GetStocks.run)
+            post '/api/data_jobs' do
+                payload =JSON.parse(request.body.read).symbolize_keys
+                DefineJob.run(DataJob.new(payload))
+                json(payload)
             end
 
         end
