@@ -10,6 +10,7 @@ GEM
     backports (3.18.1)
     bson (4.10.0)
     concurrent-ruby (1.1.6)
+    connection_pool (2.2.3)
     dry-configurable (0.11.6)
       concurrent-ruby (~> 1.0)
       dry-core (~> 0.4, >= 0.4.7)
@@ -61,10 +62,15 @@ GEM
     rack (2.2.3)
     rack-protection (2.0.8.1)
       rack
+    redis (4.2.1)
     require_all (3.0.0)
     ruby2_keywords (0.0.2)
     rufus-scheduler (3.6.0)
       fugit (~> 1.1, >= 1.1.6)
+    sidekiq (6.1.1)
+      connection_pool (>= 2.2.2)
+      rack (~> 2.0)
+      redis (>= 4.2.0)
     sinatra (2.0.8.1)
       mustermann (~> 1.0)
       rack (~> 2.0)
@@ -94,6 +100,7 @@ DEPENDENCIES
   puma
   require_all
   rufus-scheduler
+  sidekiq
   sinatra
   sinatra-contrib
 
