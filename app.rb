@@ -17,6 +17,11 @@ module Data
                 json(payload)
             end
 
+            get '/api/data_jobs' do
+                json(MongoDb.db[:data_jobs].find({}))
+            end
+
+
         end
     end
 end
