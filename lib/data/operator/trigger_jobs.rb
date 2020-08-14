@@ -1,5 +1,3 @@
-    require 'parse_cron'
-
     module DataOperator
         class TriggerJobs
             def self.run
