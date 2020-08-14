@@ -84,6 +84,8 @@ GEM
       rack-protection (= 2.0.8.1)
       sinatra (= 2.0.8.1)
       tilt (~> 2.0)
+    sucker_punch (2.1.2)
+      concurrent-ruby (~> 1.0)
     thread_safe (0.3.6)
     tilt (2.0.10)
     tzinfo (1.2.7)
@@ -105,6 +107,7 @@ DEPENDENCIES
   sidekiq
   sinatra
   sinatra-contrib
+  sucker_punch
 
 RUBY VERSION
    ruby 2.6.5p114
