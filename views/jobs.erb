@@ -3,6 +3,7 @@
     <div class="job_spec">
         <span><%= job_spec[:name] %></span>
         <span><%= job_spec[:url] %></span>
+        <span><%= job_spec[:depends_on]&.join(",") %></span>
     </div>
     <% end %>
 </div>
