@@ -20,5 +20,10 @@ module DataOperator
         get '/api/data_jobs' do
             json(MongoDb.db[:data_jobs].find({}))
         end
+
+        post '/api/trigger_job' do
+            payload = JSON.parse(request.body.read).symbolize_keys
+            TriggerJob.run(payload[:name], payload[:context])
+        end
     end
 end
