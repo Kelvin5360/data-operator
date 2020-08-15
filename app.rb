@@ -7,6 +7,8 @@ require 'require_all'
 require_all 'lib'
 require_all 'initializers'
 
+Mongo::Logger.logger.level = Logger::FATAL
+
 module DataOperator
     class App < Sinatra::Base
         register Sinatra::Contrib
