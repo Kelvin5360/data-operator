@@ -36,6 +36,7 @@ module DataOperator
         post '/api/job_callback' do
             payload = JSON.parse(request.body.read).symbolize_keys
             puts "received ack for #{payload[:job_id]}, data_changes: #{payload[:data_changes]}"
+            TriggerJobOnDataChanged.run(payload[:data_changes]) unless payload[:data_changes].nil?
         end
     end
 end
