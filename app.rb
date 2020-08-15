@@ -12,6 +12,7 @@ module DataOperator
         register Sinatra::Contrib
 
         get '/' do
+            @job_specs = MongoDb.db[:data_jobs].find({})
             erb :jobs
         end
 
