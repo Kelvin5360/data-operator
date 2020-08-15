@@ -25,5 +25,10 @@ module DataOperator
             payload = JSON.parse(request.body.read).symbolize_keys
             TriggerJob.run(payload[:name], payload[:context])
         end
+
+        post '/api/job_callback' do
+            payload = JSON.parse(request.body.read).symbolize_keys
+            puts "received ack for #{payload[:job_id]}, data_changes: #{payload[:data_changes]}"
+        end
     end
 end
