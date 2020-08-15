@@ -8,7 +8,7 @@ module DataOperator
     class DataJob < Dry::Struct
         attribute :name, Types::String
         attribute :url, Types::String
-        attribute :cron, Types::String
-        attribute :depends_on, Types::Array.of(Types::Coercible::String)
+        attribute :cron, Types::String.optional
+        attribute :depends_on, Types::Array.of(Types::Coercible::String).optional
     end
 end
